@@ -1,16 +1,15 @@
-body { 
-    background-image: url("../css/image\ \(2\).png");
-    background-position: center center;
-    background-repeat:  no-repeat;
-    background-attachment: fixed;
-    background-size:  cover;
-  }
-
-#logoimg {
-    margin-left: 50px;
- }
-
-#logotext {
-    font-family: 'Potta One', cursive;
+#mainBody {
+  background-image: url("../css/image\ \(2\).png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
+#logoimg {
+  margin-left: 50px;
+}
+
+#logotext {
+  font-family: "Potta One", cursive;
+}
