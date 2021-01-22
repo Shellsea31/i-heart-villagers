@@ -1,3 +1,4 @@
+
 #mainBody { 
     background-image: url("../css/image\ \(2\).png");
     background-position: center center;
@@ -7,10 +8,14 @@
   }
 
 #logoimg {
-    margin-left: 50px;
- }
-
-#logotext {
-    font-family: 'Potta One', cursive;
+  margin-left: 50px;
+  float: left;
 }
 
+#logotext {
+  font-family: "Potta One", cursive;
+}
+
+#cardPlace {
+  margin-top: 30%;
+}
