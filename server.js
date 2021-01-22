@@ -23,4 +23,8 @@ db.sequelize.sync().then(() => {
   });
 });
 
+<<<<<<< HEAD
 console.log(process.env.JamlyMiller)
+=======
+console.log(process.env.KtruDB);
+>>>>>>> c8127f0f9564d18dd50901f0ce09f52e9d0915df

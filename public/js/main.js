@@ -1,1 +1,3 @@
-console.log("hello")
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
