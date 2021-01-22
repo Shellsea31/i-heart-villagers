@@ -1,9 +1,9 @@
-// npm for .env folder which hides our passwords
-require("dotenv").config();
-
 // npm for routes
 const express = require("express");
 const PORT = process.env.PORT || 8080;
+
+// npm for .env folder which hides our passwords
+require("dotenv").config();
 
 // require sequelize model
 var db = require("./models");
@@ -22,9 +22,3 @@ db.sequelize.sync().then(() => {
     console.log(`Listening on http://localhost:${PORT}`);
   });
 });
-
-<<<<<<< HEAD
-console.log(process.env.JamlyMiller)
-=======
-console.log(process.env.KtruDB);
->>>>>>> c8127f0f9564d18dd50901f0ce09f52e9d0915df
