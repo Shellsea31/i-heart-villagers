@@ -22,3 +22,5 @@ db.sequelize.sync().then(() => {
     console.log(`Listening on http://localhost:${PORT}`);
   });
 });
+
+console.log(process.env.KtruDB);
