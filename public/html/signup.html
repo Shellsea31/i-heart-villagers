@@ -7,6 +7,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -15,9 +16,22 @@
     <title>Document</title>
   </head>
   <body>
+    <nav class="cyan darken-2">
+      <div class="nav-wrapper">
+          <a href="#" class="brand-logo center" id="logotext">Villagers 101</a>
+        <img id="logoimg" src="../css/icons8-animal-crossing-100.png" alt="logo" width="64" height="64">
+        <a href="#" class="sidenav-trigger" data-target = "mobile-nav"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Contact Us</a></li>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-nav">
+      <li><a href="#">Jamly Miller</a></li>
+    </ul>
+
     <main class="row">
-      <div class="col s12 m6">
-        <div class="card deep-purple accent-1">
+      <div class="col m6 offset-m3">
+        <div class="card card cyan darken-2" id="cardPlace">
           <div class="card-content white-text">
             <span class="card-title">Sign Up</span>
             <div class="row">
@@ -51,7 +65,12 @@
       </div>
     </main>
 
+
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../js/login.js"></script>
+    <script type="text/javascript" src="../js/signup.js"></script>
   </body>
 </html>

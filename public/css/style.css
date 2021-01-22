@@ -1,10 +1,11 @@
-#mainBody {
-  background-image: url("../css/image\ \(2\).png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+
+#mainBody { 
+    background-image: url("../css/image\ \(2\).png");
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+  }
 
 #logoimg {
   margin-left: 10px;
@@ -13,4 +14,8 @@
 
 #logotext {
   font-family: "Potta One", cursive;
+}
+
+#cardPlace {
+  margin-top: 30%;
 }
