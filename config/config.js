@@ -1,10 +1,10 @@
 require("dotenv").config();
 
-module.exports=
+module.exports =
 {
   "development": {
     "username": "root",
-    "password": process.env.SDB_PASS,
+    "password": process.env.JamlyMiller,
     "database": "userLogin",
     "host": "127.0.0.1",
     "dialect": "mysql"
