@@ -1,4 +1,5 @@
 const db = require("../models");
+const { villagers } = require("animal-crossing");
 
 module.exports = (app) => {
   // authenticate user when they click log in button
@@ -32,5 +33,23 @@ module.exports = (app) => {
       email: req.body.email,
       id: req.body.id,
     });
+  });
+
+  // get a villager by name
+  app.get("/api/:character", function (req, res) {
+    const character = villagers.find(
+      (villager) => villager.name === req.params.character
+    );
+    const villager = {
+      name: character.name,
+      photo: character.photoImage,
+      species: character.species,
+      personality: character.personality,
+      hobby: character.hobby,
+      birthday: character.birthday,
+      catchphrase: character.catchphrase,
+      favoriteSong: character.favoriteSong,
+    };
+    res.send(villager);
   });
 };
