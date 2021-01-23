@@ -16,6 +16,8 @@ app.use(express.json());
 // uses public folder for html and css
 app.use(express.static("public"));
 
+require("./routes/client-routes")(app);
+
 // sync database then open port upon starting app
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
