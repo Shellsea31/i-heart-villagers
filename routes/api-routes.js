@@ -1,10 +1,11 @@
 const db = require("../models");
 const { villagers } = require("animal-crossing");
+const passport = require("../config/passport");
 
 module.exports = (app) => {
   // authenticate user when they click log in button
-  app.post("/api/login", function (req, res) {
-    res.send({ msg: "success" });
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    res.json(req.user);
   });
 
   // add user to database when they click to sign up
@@ -24,15 +25,22 @@ module.exports = (app) => {
   });
 
   app.get("/api/logout", function (req, res) {
+    // end session for req.user
+    req.logout();
     res.redirect("/");
   });
 
   app.get("/api/user_data", function (req, res) {
-    res.json({
-      username: req.body.username,
-      email: req.body.email,
-      id: req.body.id,
-    });
+    if (!req.user){
+      res.json({});
+    }
+    else{
+      res.json({
+        username: req.user.username,
+        id: req.user.id,
+      });
+    }
+    
   });
 
   // get a villager by name
@@ -52,4 +60,6 @@ module.exports = (app) => {
     };
     res.send(villager);
   });
+
+  // app.delete("/api/delete", function (req, res) {});
 };

@@ -1,5 +1,6 @@
 $(document).ready(function () {
   $(".sidenav").sidenav();
+  $(".dropdown-trigger").dropdown();
 
   const signUpForm = document.getElementById("signupForm");
   const usernameInput = document.getElementById("icon_prefix");
@@ -15,7 +16,31 @@ $(document).ready(function () {
     };
 
     console.log(userSignUp);
-  });
-});
 
-$(".dropdown-trigger").dropdown();
+    if (!userSignUp.username || !userSignUp.email || !userSignUp.password) {
+      return;
+    }
+
+    signUpUser(userSignUp.username, userSignUp.email, userSignUp.password);
+    usernameInput.val("");
+    emailInput.val("");
+    passwordInput.val("");
+  });
+
+  function signUpUser(username, email, password) {
+    $.post("/api/signup", {
+      username: username,
+      email: email,
+      password: password,
+    })
+      .then((data) => {
+        window.location.replace("/main");
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
+      .catch(handleLoginErr);
+  }
+
+  function handleLoginErr(err) {
+    alert(`${err.responseJSON}`);
+  }
+});

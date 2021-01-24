@@ -1,6 +1,8 @@
 $(document).ready(function () {
   $(".sidenav").sidenav();
 
+  $(".dropdown-trigger").dropdown();
+
   const loginForm = document.getElementById("loginForm");
   const usernameInput = document.getElementById("icon_prefix");
   const passwordInput = document.getElementById("password");
@@ -8,12 +10,33 @@ $(document).ready(function () {
   loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const userLogin = {
-      username: usernameInput.value,
-      password: passwordInput.value,
+      username: usernameInput.value.trim(),
+      password: passwordInput.value.trim(),
     };
 
     console.log(userLogin);
+    if (!userLogin.username || !userLogin.password) {
+      return;
+    }
+
+    loginUser(userLogin.username, userLogin.password);
+    usernameInput.val("");
+    passwordInput.val("");
   });
+
+  function loginUser(username, password) {
+    // ajax request
+    $.post("/api/login", {
+      username: username,
+      password: password,
+    })
+      .then(() => {
+        window.location.replace("/main");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 });
 
-$(".dropdown-trigger").dropdown();
+
