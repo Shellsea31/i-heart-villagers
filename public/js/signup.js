@@ -32,10 +32,10 @@ $(document).ready(function () {
     })
       .then((data) => {
         window.location.replace("/main");
-        // If there's an error, handle it by throwing up a bootstrap alert
+        // If there's an error, handle it by throwing up an alert
       })
       .catch((err) => {
-        alert("You may already have an account. Try logging in.");
+        alert("Something went wrong. Try again.");
         console.log(err);
       });
   }
