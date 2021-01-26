@@ -29,7 +29,35 @@ $(document).ready(function () {
       .then((data) => {
         console.log(data);
 
-        html = ``
+        html = `<div class="card" id="CardHolder">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img
+            class="activator"
+            id="maiImg"
+            src="${data.photo}"
+          />
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"
+            >${data.name}<i class="material-icons right">more_vert</i></span
+          >
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"
+            >${data.name}<i class="material-icons right">close</i></span
+          >
+          <ul class="collection">
+            <li class="collection-item">Birthday: ${data.birthday} </li>
+            <li class="collection-item">Personality: ${data.personality}</li>
+            <li class="collection-item">Hobby: ${data.hobby}</li>
+            <li class="collection-item">Species: ${data.species}</li>
+            <li class="collection-item">Catchphrase: ${data.catchphrase}</li>
+            <li class="collection-item">Fav Song: ${data.favoriteSong}</li>
+          </ul>
+        </div>
+      </div>`
+
+      console.log(html)
       })
       .catch((err) => console.log(err));
   }
