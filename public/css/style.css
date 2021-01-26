@@ -19,3 +19,20 @@
 #cardPlace {
   margin-top: 30%;
 }
+
+#maiImg {
+  width: 250px;
+}
+
+#CardHolder {
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+#links {
+  width: auto;
+}
+
