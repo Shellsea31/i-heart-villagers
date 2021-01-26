@@ -22,9 +22,6 @@ $(document).ready(function () {
     }
 
     signUpUser(userSignUp.username, userSignUp.email, userSignUp.password);
-    usernameInput.val("");
-    emailInput.val("");
-    passwordInput.val("");
   });
 
   function signUpUser(username, email, password) {
@@ -37,10 +34,9 @@ $(document).ready(function () {
         window.location.replace("/main");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
-      .catch(handleLoginErr);
-  }
-
-  function handleLoginErr(err) {
-    alert(`${err.responseJSON}`);
+      .catch((err) => {
+        alert("You may already have an account. Try logging in.");
+        console.log(err);
+      });
   }
 });
