@@ -1,6 +1,11 @@
-$(document).ready(function(){
-    $('.sidenav').sidenav();
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+  $(".dropdown-trigger").dropdown();
 
-    const logOut = document.getElementById("logOut");
-    console.log(logOut);
+  $.get("/api/user_data").then(function (data) {
+    $(".member-name").text(data.username);
   });
+
+  const searchInput = document.getElementById("searchInput");
+  console.log(searchInput);
+});

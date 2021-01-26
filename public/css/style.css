@@ -19,3 +19,43 @@
 #cardPlace {
   margin-top: 30%;
 }
+
+#maiImg {
+  width: 250px;
+}
+
+#CardHolder {
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+#links {
+  width: auto;
+}
+
+
+/* body {
+  display: flex;
+  min-height: 100px;
+  flex-direction: column;
+} */
+
+
+#footer-container {
+  position: relative;
+  min-height: 20vh;
+}
+
+#content-wrap {
+  padding-bottom: 10px;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;            /* Footer height */
+}
