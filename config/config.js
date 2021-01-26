@@ -4,7 +4,7 @@ module.exports =
 {
   "development": {
     "username": "root",
-    "password": process.env.SDB_PASS,
+    "password": process.env.trukatDB,
     "database": "userLogin",
     "host": "127.0.0.1",
     "dialect": "mysql"
