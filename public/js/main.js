@@ -8,14 +8,13 @@ $(document).ready(function () {
 
   const searchInput = document.getElementById("searchInput");
   const searchForm = document.getElementById("searchForm");
+  const villagerContent = document.getElementById("villagerContent");
 
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     character = searchInput.value.trim();
     searchCharacter(character);
-
-
   });
 
   function searchCharacter(name) {
@@ -29,7 +28,7 @@ $(document).ready(function () {
       .then((data) => {
         console.log(data);
 
-        html = `<div class="card" id="CardHolder">
+        let html = `<div class="card" id="CardHolder">
         <div class="card-image waves-effect waves-block waves-light">
           <img
             class="activator"
@@ -55,9 +54,9 @@ $(document).ready(function () {
             <li class="collection-item">Fav Song: ${data.favoriteSong}</li>
           </ul>
         </div>
-      </div>`
+      </div>`;
 
-      console.log(html)
+        villagerContent.innerHTML = html;
       })
       .catch((err) => console.log(err));
   }
