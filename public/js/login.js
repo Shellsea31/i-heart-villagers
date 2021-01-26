@@ -20,8 +20,6 @@ $(document).ready(function () {
     }
 
     loginUser(userLogin.username, userLogin.password);
-    usernameInput.val("");
-    passwordInput.val("");
   });
 
   function loginUser(username, password) {
@@ -34,9 +32,8 @@ $(document).ready(function () {
         window.location.replace("/main");
       })
       .catch((err) => {
+        alert("Incorrect password or username.");
         console.log(err);
       });
   }
 });
-
-
