@@ -9,7 +9,7 @@
   margin-left: 10px;
   float: left;
 }
-#logotext {
+#logotext, #villagerName {
   font-family: "Potta One", cursive;
 }
 #cardPlace {

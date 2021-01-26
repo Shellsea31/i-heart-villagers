@@ -60,5 +60,12 @@ module.exports = (app) => {
     res.send(villager);
   });
 
+  // add villager name to Villager table
+  app.post("/api/character", (req, res) => {
+    console.log(req.body)
+    db.Villager.create(req.body)
+      .then((dbVillager) => res.json(dbVillager))
+  });
+
   // app.delete("/api/delete", function (req, res) {});
 };

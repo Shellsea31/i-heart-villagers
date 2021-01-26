@@ -38,8 +38,9 @@ $(document).ready(function () {
           />
         </div>
         <div class="card-content">
+         <h4 id="villagerName">${data.name}</h4>
           <span class="card-title activator grey-text text-darken-4"
-            >${data.name}<i class="material-icons right">more_vert</i></span
+            ><i class="material-icons right">more_vert</i></
           >
           <a id="addBtn" class="btn-floating btn-small waves-effect waves-light cyan"><i class="material-icons">add</i></a>
         </div>
@@ -52,7 +53,7 @@ $(document).ready(function () {
             <li class="collection-item">Personality: ${data.personality}</li>
             <li class="collection-item">Hobby: ${data.hobby}</li>
             <li class="collection-item">Species: ${data.species}</li>
-            <li class="collection-item">Catchphrase: ${data.catchphrase}</li>
+            <li class="collection-item">Catchphrase: "${data.catchphrase}"</li>
             <li class="collection-item">Fav Song: ${data.favoriteSong}</li>
             <img class="responsive-img" src="${data.house}">
           </ul>
@@ -61,16 +62,36 @@ $(document).ready(function () {
 
         villagerContent.innerHTML = html;
         const addBtn = document.getElementById("addBtn");
-        addVillager(addBtn);
+        const villagerName = document.getElementById("villagerName");
+        addVillager(addBtn, villagerName);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        alert("Sorry, we couldn't find the villager you're looking for, check your spelling.")
+      });
   }
 
-  function addVillager(addBtn) {
+  function addVillager(addBtn, villagerName) {
     if (addBtn) {
       addBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        console.log(addBtn);
+        const newVillager = {
+          name: villagerName.innerText,
+        };
+
+        fetch("/api/character", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newVillager),
+        })
+          .then(() => {
+            window.location.reload();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       });
     }
   }
