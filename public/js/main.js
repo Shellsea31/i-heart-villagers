@@ -26,9 +26,6 @@ $(document).ready(function () {
         id: data.id,
       };
 
-      // console.log(newUser);
-      // $(".member-name").text(newUser.username);
-
       updateUser(newUser);
     });
   });
@@ -36,9 +33,6 @@ $(document).ready(function () {
   favBtns.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
-
-      // console.log(target);
-      console.log(userId);
 
       fetch(`/api/favorites/${userId}`, {
         method: "GET",
@@ -48,24 +42,17 @@ $(document).ready(function () {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
-
           data.forEach((villager) => {
-            console.log(villager.name);
             fetch(`/api/${villager.name}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
               },
             })
-              .then((res) =>
-                // console.log(res)
-                res.json()
-              )
+              .then((res) => res.json())
               .then((results) => {
-                console.log(results);
                 let col = document.createElement("div");
-                col.setAttribute("class", "col s3");
+                col.setAttribute("class", "col s12 m6 l4");
                 let html = `
                 <div class="card" id="CardHolder">
                   <div class="card-image waves-effect waves-block waves-light">

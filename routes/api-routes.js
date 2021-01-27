@@ -57,7 +57,6 @@ module.exports = (app) => {
       favoriteSong: character.favoriteSong,
       house: character.houseImage,
     };
-    console.log(villager)
     res.send(villager);
   });
 
@@ -74,7 +73,6 @@ module.exports = (app) => {
   });
 
   app.put("/api/username", (req, res) => {
-    console.log(req.body);
     db.User.update(
       {
         username: req.body.username,
