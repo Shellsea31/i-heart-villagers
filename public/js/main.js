@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $(".sidenav").sidenav();
   $(".dropdown-trigger").dropdown();
+  $('.modal').modal();
 
   $.get("/api/user_data").then(function (data) {
     $(".member-name").text(data.username);

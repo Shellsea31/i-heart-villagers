@@ -36,9 +36,23 @@
           >
           <ul class="right hide-on-med-and-down">
             <li>
-              <a class="logotext waves-effect waves-light btn">
+              <a class="logotext waves-effect waves-light btn modal-trigger" href="#modal1">
                 Welcome <span class="member-name"></span>!
               </a>
+              <div id="modal1" class="modal">
+                <div class="modal-content cyan darken-3">
+                  <h4>Update your username</h4>
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="new-username" class="materialize-textarea"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Update</a>
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                </div>
+              </div>
             </li>
 
             <li class="favBtn">
@@ -54,10 +68,12 @@
           </ul>
         </div>
         <form id="searchForm" class="cyan darken-3 row">
-          <div class="input-field col s6">
+          <div class="input-field col s12">
             <input id="searchInput" type="text" class="validate" />
-            <label class="active" for="searchInput"
-              >Search Villagers by Name</label
+            <label class="active" for="searchInput">
+              <span>
+                <i class="material-icons" id="searchIcon">search</i>
+                Search Villagers by Name</span></label
             >
           </div>
         </form>
