@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="./css/style.css"/>
   </head>
 
   <!-- page html begins -->
@@ -73,7 +73,7 @@
           <!-- icon to far left -->
           <img
             id="logoimg"
-            src="../css/icons8-animal-crossing-100.png"
+            src="./css/icons8-animal-crossing-100.png"
             alt="logo"
             width="64"
             height="64"
@@ -82,6 +82,28 @@
           <a href="#" class="sidenav-trigger" data-target="mobile-nav"
             ><i class="material-icons">menu</i></a
           >
+          <ul class="right hide-on-med-and-down">
+            <li>
+
+              <a class="logotext waves-effect waves-light btn modal-trigger" href="#modal1">
+                Welcome <span class="member-name"></span>!
+              </a>
+              <div id="modal1" class="modal cyan darken-3">
+                <div class="modal-content">
+                  <h5>Update your username</h5>
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="new-username" class="materialize-textarea"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Update</a>
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                </div>
+              </div>
+
+            </li>
 
           <!-- menu if full screen -->
           <ul class="right hide-on-med-and-down">
@@ -101,6 +123,7 @@
         <form id="searchForm" class="cyan darken-3 row">
           <div class="input-field col s6">
             <input id="searchInput" type="text" class="validate" />
+            
             <label class="active" for="searchInput">
               <span>
                 <i class="material-icons" id="searchIcon">search</i>
@@ -172,17 +195,17 @@
         © 2021 Project-2 Team-2 Birds of Prey
         <!-- contact us dropdown -->
         <a
-          class="grey-text text-lighten-4 right dropdown-trigger btn cyan darken-2"
+
+        class="grey-text text-lighten-4 right dropdown-trigger btn cyan darken-2"
           href="#"
-          data-target="dropdown1"
+          data-target="dropdown2"
           >Contact Us</a
         >
-        <!-- dropdown opens to reveal links to github -->
-        <ul id="dropdown1" class="dropdown-content">
-          <li><a href="https://github.com/Shellsea31">Shellsea</a></li>
-          <li><a href="https://github.com/trukat">TruKat</a></li>
-          <li><a href="https://github.com/Jamly-Miller">JamJam</a></li>
-          <li><a href="https://github.com/faitheden1">Faith</a></li>
+        <ul id="dropdown2" class="dropdown-content">
+          <li><a id="TeamNumbers" href="https://github.com/Shellsea31">Shellsea</a></li>
+          <li><a id="TeamNumbers" href="https://github.com/trukat">TruKat</a></li>
+          <li><a id="TeamNumbers" href="https://github.com/Jamly-Miller">JamJam</a></li>
+          <li><a id="TeamNumbers" href="https://github.com/faitheden1">Faith</a></li>
         </ul>
       </div>
     </footer>
@@ -195,6 +218,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>

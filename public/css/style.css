@@ -60,5 +60,16 @@ label {
   position: relative;
   min-height: 100vh;
 }
+ 
+#icon_prefix, #email, #password:-webkit-autofill,
+#icon_prefix, #email, #password:-webkit-autofill:hover, 
+#icon_prefix, #email, #password:-webkit-autofill:focus, 
+#icon_prefix, #email, #password:-webkit-autofill:active  {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #fff !important;
+  font-family: "Potta One"; 
+}
 
-
+#TeamNumbers {
+  font-family: "Potta One"; 
+}
