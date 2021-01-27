@@ -62,13 +62,15 @@ module.exports = (app) => {
 
   // add villager name to Villager table
   app.post("/api/character", (req, res) => {
-    db.Villager.create(req.body)
-      .then((dbVillager) => res.json(dbVillager))
+    db.Villager.create(req.body).then((dbVillager) => res.json(dbVillager));
   });
 
-  // app.get("/api/favorites", (req, res)=>{
-  //   console.log(req.body)
-  // })
+  app.get("/api/favorites/:id", (req, res) => {
+    db.Villager.findAll({
+      where: { id: req.params.id },
+      include: [db.User],
+    }).then((result) => res.json(result));
+  });
 
   // app.delete("/api/delete", function (req, res) {});
 };
