@@ -31,16 +31,14 @@ module.exports = (app) => {
   });
 
   app.get("/api/user_data", function (req, res) {
-    if (!req.user){
+    if (!req.user) {
       res.json({});
-    }
-    else{
+    } else {
       res.json({
         username: req.user.username,
         id: req.user.id,
       });
     }
-    
   });
 
   // get a villager by name
@@ -57,8 +55,21 @@ module.exports = (app) => {
       birthday: character.birthday,
       catchphrase: character.catchphrase,
       favoriteSong: character.favoriteSong,
+      house: character.houseImage,
     };
     res.send(villager);
+  });
+
+  // add villager name to Villager table
+  app.post("/api/character", (req, res) => {
+    db.Villager.create(req.body).then((dbVillager) => res.json(dbVillager));
+  });
+
+  app.get("/api/favorites/:id", (req, res) => {
+    db.Villager.findAll({
+      where: { id: req.params.id },
+      include: [db.User],
+    }).then((result) => res.json(result));
   });
 
   // app.delete("/api/delete", function (req, res) {});

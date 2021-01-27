@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Villagers 101</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap"
@@ -36,12 +36,25 @@
           >
           <ul class="right hide-on-med-and-down">
             <li>
-              <a class="logotext waves-effect dropdown-trigger btn" data-target="dropdown1">
+
+              <a class="logotext waves-effect waves-light btn modal-trigger" href="#modal1">
                 Welcome <span class="member-name"></span>!
               </a>
-              <ul class="dropdown-content" id="dropdown1">
-                <li><a href="#!">Change User Name?</a></li>
-              </ul>
+              <div id="modal1" class="modal cyan darken-3">
+                <div class="modal-content">
+                  <h5>Update your username</h5>
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="new-username" class="materialize-textarea"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Update</a>
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                </div>
+              </div>
+
             </li>
 
             <li class="favBtn">
@@ -59,8 +72,11 @@
         <form id="searchForm" class="cyan darken-3 row">
           <div class="input-field col s6">
             <input id="searchInput" type="text" class="validate" />
-            <label class="active" for="searchInput"
-              >Search Villagers by Name</label
+            
+            <label class="active" for="searchInput">
+              <span>
+                <i class="material-icons" id="searchIcon">search</i>
+                Search Villagers by Name</span></label
             >
           </div>
         </form>
@@ -121,14 +137,15 @@
       <div class="logotext container">
         © 2021 Project-2 Team-2 Birds of Prey
         <a
+
         class="grey-text text-lighten-4 right dropdown-trigger btn cyan darken-2"
           href="#"
           data-target="dropdown2"
           >Contact Us</a
         >
         <ul id="dropdown2" class="dropdown-content">
-          <li><a id="TeamNumbers" href="https://github.com/Shellsea31">Seashell</a></li>
-          <li><a id="TeamNumbers" href="https://github.com/trukat">Trucat</a></li>
+          <li><a id="TeamNumbers" href="https://github.com/Shellsea31">Shellsea</a></li>
+          <li><a id="TeamNumbers" href="https://github.com/trukat">TruKat</a></li>
           <li><a id="TeamNumbers" href="https://github.com/Jamly-Miller">JamJam</a></li>
           <li><a id="TeamNumbers" href="https://github.com/faitheden1">Faith</a></li>
         </ul>
