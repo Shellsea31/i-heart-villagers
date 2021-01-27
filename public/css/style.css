@@ -11,14 +11,38 @@
 main {
   flex: 1 0 auto;
 }
+
+#title {
+  margin-left: 25px;
+  font-size: 35px;
+}
+
 #logoimg {
   margin-left: 10px;
   float: left;
 }
-.logotext,
+
+.logotext, .modal-content,
 #villagerName {
   font-family: "Potta One", cursive;
 }
+
+.modal {
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  padding: 0;
+  max-height: 40%;
+  width: 35%;
+  will-change: top, opacity;
+}
+
+#searchIcon, label {
+  display:inline-block;
+  text-align: center;
+  line-height: 100%;
+}
+
 #cardPlace {
   margin-top: 10%;
 }
