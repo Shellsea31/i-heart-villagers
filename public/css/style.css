@@ -11,6 +11,12 @@
 main {
   flex: 1 0 auto;
 }
+
+#title {
+  margin-left: 25px;
+  font-size: 30px;
+}
+
 #logoimg {
   margin-left: 10px;
   float: left;
