@@ -72,5 +72,21 @@ module.exports = (app) => {
     }).then((result) => res.json(result));
   });
 
+  app.put("/api/username", (req, res) => {
+    console.log(req.body);
+    db.User.update(
+      {
+        username: req.body.username,
+      },
+      {
+        where: { id: req.body.id },
+      }
+    )
+      .then((result) => res.json(result))
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
   // app.delete("/api/delete", function (req, res) {});
 };

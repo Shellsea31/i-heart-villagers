@@ -11,13 +11,24 @@ $(document).ready(function () {
   const searchForm = document.getElementById("searchForm");
   const villagerContent = document.getElementById("villagerContent");
   const favBtns = document.querySelectorAll(".favBtn");
-  const newUsername = document.getElementById("new-username");
+  const username = document.getElementById("new-username");
   const updateForm = document.getElementById("updateForm");
 
   updateForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const username = newUsername.value.trim();
-    
+    const newUsername = username.value.trim();
+
+    $.get("/api/user_data").then(function (data) {
+      const newUser = {
+        username: newUsername,
+        id: data.id,
+      };
+
+      // console.log(newUser);
+      // $(".member-name").text(newUser.username);
+
+      updateUser(newUser)
+    });
   });
 
   favBtns.forEach((button) => {
@@ -35,6 +46,20 @@ $(document).ready(function () {
     searchCharacter(character);
     addVillager();
   });
+
+  function updateUser(user) {
+    fetch("/api/username", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((err) => console.log(err));
+  }
 
   function searchCharacter(name) {
     fetch(`/api/${name}`, {
