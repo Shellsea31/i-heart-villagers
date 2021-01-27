@@ -9,7 +9,8 @@
   margin-left: 10px;
   float: left;
 }
-#logotext, #villagerName {
+.logotext,
+#villagerName {
   font-family: "Potta One", cursive;
 }
 #cardPlace {
@@ -40,4 +41,8 @@
 #page-container {
   position: relative;
   min-height: 100vh;
+}
+
+#welcome {
+  margin-top: 22px;
 }

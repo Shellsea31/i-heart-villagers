@@ -9,6 +9,26 @@ $(document).ready(function () {
   const searchInput = document.getElementById("searchInput");
   const searchForm = document.getElementById("searchForm");
   const villagerContent = document.getElementById("villagerContent");
+  const favBtns = document.querySelectorAll(".favBtn");
+
+  favBtns.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+    
+        // fetch("/api/favorites", {
+        //   method: "GET",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        // })
+        //   .then((response) => response.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //   });
+
+
+      });
+  });
 
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -27,7 +47,6 @@ $(document).ready(function () {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
 
         let html = `<div class="card" id="CardHolder">
         <div class="card-image waves-effect waves-block waves-light">
@@ -38,7 +57,7 @@ $(document).ready(function () {
           />
         </div>
         <div class="card-content">
-         <h4 id="villagerName">${data.name}</h4>
+         <h4 class="logotext" id="villagerName">${data.name}</h4>
           <span class="card-title activator grey-text text-darken-4"
             ><i class="material-icons right">more_vert</i></
           >
@@ -67,7 +86,9 @@ $(document).ready(function () {
       })
       .catch((err) => {
         console.log(err);
-        alert("Sorry, we couldn't find the villager you're looking for, check your spelling.")
+        alert(
+          "Sorry, we couldn't find the villager you're looking for, check your spelling."
+        );
       });
   }
 

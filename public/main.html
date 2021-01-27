@@ -24,7 +24,7 @@
       <div id="content-wrap">
         <nav class="cyan darken-2 nav-extended">
           <div class="nav-wrapper">
-            <a href="#" class="brand-logo center" id="logotext"
+            <a href="#" class="brand-logo center logotext"
               >Villagers 101</a
             >
             <img
@@ -39,10 +39,11 @@
             >
             <ul class="right hide-on-med-and-down">
               <li>
-                <a href="#">Welcome <span class="member-name"></span>!</a>
+                <h6 id="welcome" class="logotext">Welcome <span class="member-name"></span>!</h6>
               </li>
-              <li><a href="#">Favorite Villagers</a></li>
-              <li><a href="/api/logout">Log Out</a></li>
+              
+              <li class="favBtn"><a class="logotext waves-effect waves-light btn">Favorites</a></li>
+              <li class="logotext"><a href="/api/logout">Log Out</a></li>
             </ul>
           </div>
           <form id="searchForm" class="cyan darken-3 row">
@@ -55,14 +56,14 @@
           </form>
         </nav>
         <ul class="sidenav" id="mobile-nav">
-          <li><a href="#">Favorite Villagers</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li class="favBtn"><a class="logotext waves-effect waves-light btn">Favorites</a></li>
+          <li class="logotext"><a href="#">Log Out</a></li>
         </ul>
 
         <main id="villagerContent"></main>
       </div>
       <footer class="footer-copyright cyan darken-3" id="footer">
-        <div class="container">
+        <div class="logotext container">
           © 2021 Project-2 Team-2 Birds of Prey
           <a
             class="grey-text text-lighten-4 right dropdown-trigger btn cyan darken-2"
