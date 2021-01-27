@@ -57,6 +57,7 @@ module.exports = (app) => {
       favoriteSong: character.favoriteSong,
       house: character.houseImage,
     };
+    console.log(villager)
     res.send(villager);
   });
 
@@ -67,7 +68,7 @@ module.exports = (app) => {
 
   app.get("/api/favorites/:id", (req, res) => {
     db.Villager.findAll({
-      where: { id: req.params.id },
+      where: { UserId: req.params.id },
       include: [db.User],
     }).then((result) => res.json(result));
   });
@@ -88,5 +89,5 @@ module.exports = (app) => {
       });
   });
 
-  // app.delete("/api/delete", function (req, res) {});
+  // app.delete("/api/delete/:id", function (req, res) {});
 };

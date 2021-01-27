@@ -3,8 +3,10 @@ $(document).ready(function () {
   $(".dropdown-trigger").dropdown();
   $(".modal").modal();
 
+  let userId;
   $.get("/api/user_data").then(function (data) {
     $(".member-name").text(data.username);
+    userId = data.id;
   });
 
   const searchInput = document.getElementById("searchInput");
@@ -27,7 +29,7 @@ $(document).ready(function () {
       // console.log(newUser);
       // $(".member-name").text(newUser.username);
 
-      updateUser(newUser)
+      updateUser(newUser);
     });
   });
 
@@ -35,7 +37,84 @@ $(document).ready(function () {
     button.addEventListener("click", (e) => {
       e.preventDefault();
 
-      console.log(target);
+      // console.log(target);
+      console.log(userId);
+
+      fetch(`/api/favorites/${userId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          data.forEach((villager) => {
+            console.log(villager.name);
+            fetch(`/api/${villager.name}`, {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+              .then((res) =>
+                // console.log(res)
+                res.json()
+              )
+              .then((results) => {
+                console.log(results);
+                let col = document.createElement("div");
+                col.setAttribute("class", "col s3");
+                let html = `
+                <div class="card" id="CardHolder">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img
+                      class="activator"
+                      id="maiImg"
+                      src="${results.photo}"
+                    />
+                  </div>
+                  <div class="card-content">
+                    <h4 class="logotext" id="villagerName">Agnes</h4>
+                    <span class="card-title activator grey-text text-darken-4"
+                      ><i class="material-icons right">more_vert</i></span
+                    >
+                    <a onclick="deleteVillager(event)" value="${villager.id}"
+                      id="deleteBtn"
+                      class="btn-floating btn-small waves-effect waves-light cyan"
+                      ><i class="material-icons">add</i></a
+                    >
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"
+                      >Agnes<i class="material-icons right">close</i></span
+                    >
+                    <ul class="collection">
+                      <li class="collection-item">Birthday:</li>
+                      <li class="collection-item">Personality:</li>
+                      <li class="collection-item">Hobby:</li>
+                      <li class="collection-item">Species:</li>
+                      <li class="collection-item">Catchphrase:</li>
+                      <li class="collection-item">Fav Song:</li>
+                      <img
+                        class="responsive-img"
+                        src="https://acnhcdn.com/drivesync/render/houses/pig17_313_Agnes.png"
+                      />
+                    </ul>
+                  </div>
+                </div>`;
+                col.innerHTML = html;
+                const villagerContent = document.getElementById(
+                  "villagerContent"
+                );
+                villagerContent.append(col);
+              });
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     });
   });
 
@@ -46,6 +125,13 @@ $(document).ready(function () {
     searchCharacter(character);
     addVillager();
   });
+
+  function deleteVillager(event) {
+    console.log(event.target, event.target.getAttribute("value"));
+    // id=event.target.getAttribute("value")
+
+    // fetch(`/api/delete/${id}`)
+  }
 
   function updateUser(user) {
     fetch("/api/username", {
@@ -120,6 +206,7 @@ $(document).ready(function () {
         e.preventDefault();
         const newVillager = {
           name: villagerName.innerText,
+          UserId: userId,
         };
 
         fetch("/api/character", {
