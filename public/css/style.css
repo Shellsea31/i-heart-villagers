@@ -27,6 +27,16 @@ main {
   font-family: "Potta One", cursive;
 }
 
+.modal {
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  padding: 0;
+  max-height: 40%;
+  width: 35%;
+  will-change: top, opacity;
+}
+
 #searchIcon, label {
   display:inline-block;
   text-align: center;
