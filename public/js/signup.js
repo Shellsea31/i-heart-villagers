@@ -15,7 +15,6 @@ $(document).ready(function () {
       password: passwordInput.value,
     };
 
-    console.log(userSignUp);
 
     if (!userSignUp.username || !userSignUp.email || !userSignUp.password) {
       return;

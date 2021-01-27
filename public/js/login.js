@@ -13,8 +13,6 @@ $(document).ready(function () {
       username: usernameInput.value.trim(),
       password: passwordInput.value.trim(),
     };
-
-    console.log(userLogin);
     if (!userLogin.username || !userLogin.password) {
       return;
     }

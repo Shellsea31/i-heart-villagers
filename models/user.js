@@ -20,15 +20,17 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
+  User.associate = (models) => {
+    User.hasMany(models.Villager, {
+      onDelete: "cascade",
+    });
+  };
+
   User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
   User.addHook("beforeCreate", function (user) {
-    user.password = bcrypt.hashSync(
-      user.password,
-      bcrypt.genSaltSync(),
-      null
-    );
+    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(), null);
   });
   return User;
 };
