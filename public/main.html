@@ -24,11 +24,9 @@
   <!-- page html begins -->
   <body id="mainBody">
     <div id="content-wrap">
-
       <!-- blue navbar contains title, icon, options to change username, lookup villager, see fav villagers, and logout -->
       <nav class="cyan darken-2 nav-extended">
         <div class="nav-wrapper">
-
           <!-- welcome user/change username -->
           <a
             id="welcome"
@@ -39,20 +37,20 @@
           </a>
           <!-- modal unactivated -->
           <div id="modal1" class="modal cyan darken-3">
-            <div class="modal-content">
-              <h5>Update your username</h5>
-              <div class="row"></div>
+            <form type id="updateForm" class="modal-content">
               <div class="row">
-                <div class="input-field col s12">
-                  <textarea
-                    id="new-username"
-                    class="materialize-textarea"
-                  ></textarea>
-                </div>
+                <input
+                  placeholder="New Username"
+                  id="new-username"
+                  type="text"
+                  class="validate logotext"
+                />
+              </div>
 
-                <div class="modal-footer">
+              <div class="row">
+                <div>
                   <a
-                    href="#!"
+                    href="#"
                     class="modal-close waves-effect waves-green btn-flat"
                     >Update</a
                   >
@@ -63,7 +61,7 @@
                   >
                 </div>
               </div>
-            </div>
+            </form>
           </div>
 
           <!-- title -->
@@ -100,17 +98,16 @@
         <!-- search for fav villager -->
         <form id="searchForm" class="cyan darken-3 row">
           <div class="input-field col s6">
-            <input id="searchInput" type="text" class="validate" />
-            <label class="active" for="searchInput">
-              <span>
-                <i class="material-icons" id="searchIcon">search</i>
-                Search Villagers by Name</span
-              ></label
-            >
+            <input
+              placeholder="Search Villager by Name"
+              id="searchInput"
+              type="text"
+              class="validate"
+            />
           </div>
         </form>
       </nav>
-      
+
       <!-- hamburger opens options to see favorites and logout -->
       <ul class="sidenav" id="mobile-nav">
         <li class="favBtn">
@@ -119,7 +116,6 @@
         <li class="logotext"><a href="/api/logout">Log Out</a></li>
       </ul>
     </div>
-
 
     <!-- searched and favorite villagers will appear here -->
     <main id="villagerContent">
@@ -186,7 +182,6 @@
         </ul>
       </div>
     </footer>
-
 
     <!-- javascript, materialize, and jQuery -->
     <script

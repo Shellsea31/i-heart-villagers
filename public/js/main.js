@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(".sidenav").sidenav();
   $(".dropdown-trigger").dropdown();
-  $('.modal').modal();
+  $(".modal").modal();
 
   $.get("/api/user_data").then(function (data) {
     $(".member-name").text(data.username);
@@ -11,24 +11,21 @@ $(document).ready(function () {
   const searchForm = document.getElementById("searchForm");
   const villagerContent = document.getElementById("villagerContent");
   const favBtns = document.querySelectorAll(".favBtn");
+  const newUsername = document.getElementById("new-username");
+  const updateForm = document.getElementById("updateForm");
+
+  updateForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = newUsername.value.trim();
+    
+  });
 
   favBtns.forEach((button) => {
     button.addEventListener("click", (e) => {
-        e.preventDefault();
-    
-        // fetch(`/api/favorites/${}`, {
-        //   method: "GET",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        // })
-        //   .then((response) => response.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //   });
+      e.preventDefault();
 
-
-      });
+      console.log(target);
+    });
   });
 
   searchForm.addEventListener("submit", (e) => {
@@ -48,7 +45,6 @@ $(document).ready(function () {
     })
       .then((response) => response.json())
       .then((data) => {
-
         let html = `<div class="card" id="CardHolder">
         <div class="card-image waves-effect waves-block waves-light">
           <img
