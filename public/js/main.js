@@ -15,7 +15,7 @@ $(document).ready(function () {
     button.addEventListener("click", (e) => {
         e.preventDefault();
     
-        // fetch("/api/favorites", {
+        // fetch(`/api/favorites/${}`, {
         //   method: "GET",
         //   headers: {
         //     "Content-Type": "application/json",
