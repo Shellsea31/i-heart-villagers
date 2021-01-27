@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- reference links -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,11 +20,57 @@
     />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
+
+  <!-- page html begins -->
   <body id="mainBody">
     <div id="content-wrap">
+
+      <!-- blue navbar contains title, icon, options to change username, lookup villager, see fav villagers, and logout -->
       <nav class="cyan darken-2 nav-extended">
         <div class="nav-wrapper">
-          <a href="#" id="title" class="logotext">Villagers 101</a>
+
+          <!-- welcome user/change username -->
+          <a
+            id="welcome"
+            class="logotext waves-effect waves-light btn modal-trigger"
+            href="#modal1"
+          >
+            Welcome <span class="member-name"></span>!
+          </a>
+          <!-- modal unactivated -->
+          <div id="modal1" class="modal cyan darken-3">
+            <div class="modal-content">
+              <h5>Update your username</h5>
+              <div class="row"></div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea
+                    id="new-username"
+                    class="materialize-textarea"
+                  ></textarea>
+                </div>
+
+                <div class="modal-footer">
+                  <a
+                    href="#!"
+                    class="modal-close waves-effect waves-green btn-flat"
+                    >Update</a
+                  >
+                  <a
+                    href="#!"
+                    class="modal-close waves-effect waves-green btn-flat"
+                    >Cancel</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- title -->
+          <a href="#" class="hide-on-med-and-down brand-logo center logotext"
+            >Villagers 101</a
+          >
+          <!-- icon to far left -->
           <img
             id="logoimg"
             src="../css/icons8-animal-crossing-100.png"
@@ -31,30 +78,13 @@
             width="64"
             height="64"
           />
+          <!-- hamburger for small screen -->
           <a href="#" class="sidenav-trigger" data-target="mobile-nav"
             ><i class="material-icons">menu</i></a
           >
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a class="logotext waves-effect waves-light btn modal-trigger" href="#modal1">
-                Welcome <span class="member-name"></span>!
-              </a>
-              <div id="modal1" class="modal cyan darken-3">
-                <div class="modal-content">
-                  <h5>Update your username</h5>
-                  <div class="row">
-                    <form class="col s12">
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <textarea id="new-username" class="materialize-textarea"></textarea>
-                </div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Update</a>
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                </div>
-              </div>
-            </li>
 
+          <!-- menu if full screen -->
+          <ul class="right hide-on-med-and-down">
             <li class="favBtn">
               <a class="logotext waves-effect waves-light btn">Favorites</a>
             </li>
@@ -67,17 +97,21 @@
             </li>
           </ul>
         </div>
+        <!-- search for fav villager -->
         <form id="searchForm" class="cyan darken-3 row">
           <div class="input-field col s6">
             <input id="searchInput" type="text" class="validate" />
             <label class="active" for="searchInput">
               <span>
                 <i class="material-icons" id="searchIcon">search</i>
-                Search Villagers by Name</span></label
+                Search Villagers by Name</span
+              ></label
             >
           </div>
         </form>
       </nav>
+      
+      <!-- hamburger opens options to see favorites and logout -->
       <ul class="sidenav" id="mobile-nav">
         <li class="favBtn">
           <a class="logotext waves-effect waves-light btn">Favorites</a>
@@ -86,6 +120,8 @@
       </ul>
     </div>
 
+
+    <!-- searched and favorite villagers will appear here -->
     <main id="villagerContent">
       <!-- <div class="row">
         <div class="col s3">
@@ -130,15 +166,18 @@
       </div> -->
     </main>
 
+    <!-- footer has links to our github accounts -->
     <footer class="cyan darken-3" id="footer">
       <div class="logotext container">
         © 2021 Project-2 Team-2 Birds of Prey
+        <!-- contact us dropdown -->
         <a
           class="grey-text text-lighten-4 right dropdown-trigger btn cyan darken-2"
           href="#"
           data-target="dropdown1"
           >Contact Us</a
         >
+        <!-- dropdown opens to reveal links to github -->
         <ul id="dropdown1" class="dropdown-content">
           <li><a href="https://github.com/Shellsea31">Shellsea</a></li>
           <li><a href="https://github.com/trukat">TruKat</a></li>
@@ -148,6 +187,8 @@
       </div>
     </footer>
 
+
+    <!-- javascript, materialize, and jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

@@ -12,9 +12,8 @@ main {
   flex: 1 0 auto;
 }
 
-#title {
+#welcome {
   margin-left: 25px;
-  font-size: 35px;
 }
 
 #logoimg {
@@ -22,23 +21,20 @@ main {
   float: left;
 }
 
-.logotext, .modal-content,
+.logotext,
+.modal-content,
 #villagerName {
   font-family: "Potta One", cursive;
 }
 
 .modal {
-  left: 0;
-  right: 0;
-  background-color: #fafafa;
-  padding: 0;
-  max-height: 40%;
-  width: 35%;
-  will-change: top, opacity;
+  height: 300px;
+  width: 300px;
 }
 
-#searchIcon, label {
-  display:inline-block;
+#searchIcon,
+label {
+  display: inline-block;
   text-align: center;
   line-height: 100%;
 }
@@ -64,3 +60,5 @@ main {
   position: relative;
   min-height: 100vh;
 }
+
+
