@@ -67,10 +67,32 @@ module.exports = (app) => {
 
   app.get("/api/favorites/:id", (req, res) => {
     db.Villager.findAll({
-      where: { id: req.params.id },
+      where: { UserId: req.params.id },
       include: [db.User],
     }).then((result) => res.json(result));
   });
 
-  // app.delete("/api/delete", function (req, res) {});
+  app.put("/api/username", (req, res) => {
+    db.User.update(
+      {
+        username: req.body.username,
+      },
+      {
+        where: { id: req.body.id },
+      }
+    )
+      .then((result) => res.json(result))
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  app.delete("/api/delete/:id", function (req, res) {
+    db.Villager.destroy({
+      where: { id: req.params.id },
+      include: [db.User],
+    })
+      .then((result) => res.json(result))
+      .catch((err) => console.log(err));
+  });
 };

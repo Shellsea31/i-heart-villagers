@@ -18,17 +18,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <!-- page html begins -->
   <body id="mainBody">
     <div id="content-wrap">
-
       <!-- blue navbar contains title, icon, options to change username, lookup villager, see fav villagers, and logout -->
       <nav class="cyan darken-2 nav-extended">
         <div class="nav-wrapper">
-
           <!-- welcome user/change username -->
           <a
             id="welcome"
@@ -39,31 +37,29 @@
           </a>
           <!-- modal unactivated -->
           <div id="modal1" class="modal cyan darken-3">
-            <div class="modal-content">
-              <h5>Update your username</h5>
-              <div class="row"></div>
+            <form id="updateForm" class="modal-content">
               <div class="row">
-                <div class="input-field col s12">
-                  <textarea
-                    id="new-username"
-                    class="materialize-textarea"
-                  ></textarea>
-                </div>
+                <input
+                  placeholder="New Username"
+                  id="new-username"
+                  type="text"
+                  class="validate logotext"
+                />
+              </div>
 
-                <div class="modal-footer">
-                  <a
-                    href="#!"
-                    class="modal-close waves-effect waves-green btn-flat"
+              <div class="row">
+                <div>
+                  <!-- <a class="modal-close waves-effect waves-green btn-flat"
                     >Update</a
-                  >
+                  > -->
                   <a
                     href="#!"
                     class="modal-close waves-effect waves-green btn-flat"
-                    >Cancel</a
+                    >Close</a
                   >
                 </div>
               </div>
-            </div>
+            </form>
           </div>
 
           <!-- title -->
@@ -73,7 +69,7 @@
           <!-- icon to far left -->
           <img
             id="logoimg"
-            src="./css/icons8-animal-crossing-100.png"
+            src="../css/icons8-animal-crossing-100.png"
             alt="logo"
             width="64"
             height="64"
@@ -82,28 +78,6 @@
           <a href="#" class="sidenav-trigger" data-target="mobile-nav"
             ><i class="material-icons">menu</i></a
           >
-          <ul class="right hide-on-med-and-down">
-            <li>
-
-              <a class="logotext waves-effect waves-light btn modal-trigger" href="#modal1">
-                Welcome <span class="member-name"></span>!
-              </a>
-              <div id="modal1" class="modal cyan darken-3">
-                <div class="modal-content">
-                  <h5>Update your username</h5>
-                  <div class="row">
-                    <form class="col s12">
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <textarea id="new-username" class="materialize-textarea"></textarea>
-                </div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Update</a>
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                </div>
-              </div>
-
-            </li>
 
           <!-- menu if full screen -->
           <ul class="right hide-on-med-and-down">
@@ -122,18 +96,20 @@
         <!-- search for fav villager -->
         <form id="searchForm" class="cyan darken-3 row">
           <div class="input-field col s6">
-            <input id="searchInput" type="text" class="validate" />
-            
+            <input
+              id="searchInput"
+              type="text"
+              class="validate"
+            />
             <label class="active" for="searchInput">
               <span>
                 <i class="material-icons" id="searchIcon">search</i>
-                Search Villagers by Name</span
-              ></label
+                Search Villagers by Name</span></label
             >
           </div>
         </form>
       </nav>
-      
+
       <!-- hamburger opens options to see favorites and logout -->
       <ul class="sidenav" id="mobile-nav">
         <li class="favBtn">
@@ -143,51 +119,8 @@
       </ul>
     </div>
 
-
     <!-- searched and favorite villagers will appear here -->
-    <main id="villagerContent">
-      <!-- <div class="row">
-        <div class="col s3">
-          <div class="card" id="CardHolder">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img
-                class="activator"
-                id="maiImg"
-                src="https://acnhcdn.com/latest/NpcBromide/NpcNmlPig17.png"
-              />
-            </div>
-            <div class="card-content">
-              <h4 class="logotext" id="villagerName">Agnes</h4>
-              <span class="card-title activator grey-text text-darken-4"
-                ><i class="material-icons right">more_vert</i></span
-              >
-              <a
-                id="addBtn"
-                class="btn-floating btn-small waves-effect waves-light cyan"
-                ><i class="material-icons">add</i></a
-              >
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"
-                >Agnes<i class="material-icons right">close</i></span
-              >
-              <ul class="collection">
-                <li class="collection-item">Birthday:</li>
-                <li class="collection-item">Personality:</li>
-                <li class="collection-item">Hobby:</li>
-                <li class="collection-item">Species:</li>
-                <li class="collection-item">Catchphrase:</li>
-                <li class="collection-item">Fav Song:</li>
-                <img
-                  class="responsive-img"
-                  src="https://acnhcdn.com/drivesync/render/houses/pig17_313_Agnes.png"
-                />
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </main>
+    <main id="villagerContent" class="row"></main>
 
     <!-- footer has links to our github accounts -->
     <footer class="cyan darken-3" id="footer">
@@ -195,21 +128,20 @@
         © 2021 Project-2 Team-2 Birds of Prey
         <!-- contact us dropdown -->
         <a
-
-        class="grey-text text-lighten-4 right dropdown-trigger btn cyan darken-2"
+          class="grey-text text-lighten-4 right dropdown-trigger btn cyan darken-2"
           href="#"
-          data-target="dropdown2"
+          data-target="dropdown1"
           >Contact Us</a
         >
-        <ul id="dropdown2" class="dropdown-content">
-          <li><a id="TeamNumbers" href="https://github.com/Shellsea31">Shellsea</a></li>
-          <li><a id="TeamNumbers" href="https://github.com/trukat">TruKat</a></li>
-          <li><a id="TeamNumbers" href="https://github.com/Jamly-Miller">JamJam</a></li>
-          <li><a id="TeamNumbers" href="https://github.com/faitheden1">Faith</a></li>
+        <!-- dropdown opens to reveal links to github -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a target="blank" href="https://github.com/Shellsea31">Shellsea</a></li>
+          <li><a target="blank" href="https://github.com/trukat">TruKat</a></li>
+          <li><a target="blank" href="https://github.com/Jamly-Miller">JamJam</a></li>
+          <li><a target="blank" href="https://github.com/faitheden1">Faith</a></li>
         </ul>
       </div>
     </footer>
-
 
     <!-- javascript, materialize, and jQuery -->
     <script
@@ -218,6 +150,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
   </body>
 </html>
