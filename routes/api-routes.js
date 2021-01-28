@@ -87,5 +87,12 @@ module.exports = (app) => {
       });
   });
 
-  // app.delete("/api/delete/:id", function (req, res) {});
+  app.delete("/api/delete/:id", function (req, res) {
+    db.Villager.destroy({
+      where: { id: req.params.id },
+      include: [db.User],
+    })
+      .then((result) => res.json(result))
+      .catch((err) => console.log(err));
+  });
 };
