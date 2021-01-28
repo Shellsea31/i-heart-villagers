@@ -63,30 +63,30 @@ $(document).ready(function () {
                     />
                   </div>
                   <div class="card-content">
-                    <h4 class="logotext" id="villagerName">Agnes</h4>
+                    <h4 class="logotext" id="villagerName">${results.name}</h4>
                     <span class="card-title activator grey-text text-darken-4"
                       ><i class="material-icons right">more_vert</i></span
                     >
-                    <a onclick="deleteVillager(event)" value="${villager.id}"
-                      id="deleteBtn"
+                    <div class="delete">
+                    <button value="${villager.id}" onclick="deleteVillager(e)"
                       class="btn-floating btn-small waves-effect waves-light cyan"
-                      ><i class="material-icons">add</i></a
-                    >
+                      ><i class=" tiny material-icons">delete</i></button>
+                    </div>
                   </div>
                   <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4"
-                      >Agnes<i class="material-icons right">close</i></span
+                      >${results.name}<i class="material-icons right">close</i></span
                     >
                     <ul class="collection">
-                      <li class="collection-item">Birthday:</li>
-                      <li class="collection-item">Personality:</li>
-                      <li class="collection-item">Hobby:</li>
-                      <li class="collection-item">Species:</li>
-                      <li class="collection-item">Catchphrase:</li>
-                      <li class="collection-item">Fav Song:</li>
+                      <li class="collection-item">Birthday: ${results.birthday}</li>
+                      <li class="collection-item">Personality: ${results.personality}</li>
+                      <li class="collection-item">Hobby: ${results.hobby}</li>
+                      <li class="collection-item">Species: ${results.species}</li>
+                      <li class="collection-item">Catchphrase: "${results.catchphrase}"</li>
+                      <li class="collection-item">Fav Song: ${results.favoriteSong}</li>
                       <img
                         class="responsive-img"
-                        src="https://acnhcdn.com/drivesync/render/houses/pig17_313_Agnes.png"
+                        src="${results.house}"
                       />
                     </ul>
                   </div>
@@ -98,6 +98,8 @@ $(document).ready(function () {
                 villagerContent.append(col);
               });
           });
+
+          console.log(document.getElementsByClassName("delete"));
         })
         .catch((err) => {
           console.log(err);
@@ -112,13 +114,6 @@ $(document).ready(function () {
     searchCharacter(character);
     addVillager();
   });
-
-  function deleteVillager(event) {
-    console.log(event.target, event.target.getAttribute("value"));
-    // id=event.target.getAttribute("value")
-
-    // fetch(`/api/delete/${id}`)
-  }
 
   function updateUser(user) {
     fetch("/api/username", {
