@@ -75,7 +75,7 @@ $(document).ready(function () {
         .then((res) => res.json())
         .then((results) => {
           let col = document.createElement("div");
-          col.setAttribute("class", "col s12 m6 l4");
+          col.setAttribute("class", "col s12 m6 l6");
           let html = `
           <div class="card" id="CardHolder">
         <div class="card-image waves-effect waves-block waves-light">
