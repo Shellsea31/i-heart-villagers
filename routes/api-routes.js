@@ -65,6 +65,7 @@ module.exports = (app) => {
     db.Villager.create(req.body).then((dbVillager) => res.json(dbVillager));
   });
 
+  // get all villagers from villagers table associated with users UserId
   app.get("/api/favorites/:id", (req, res) => {
     db.Villager.findAll({
       where: { UserId: req.params.id },
@@ -72,6 +73,7 @@ module.exports = (app) => {
     }).then((result) => res.json(result));
   });
 
+  // update username from users table associated with users id
   app.put("/api/username", (req, res) => {
     db.User.update(
       {
@@ -87,6 +89,7 @@ module.exports = (app) => {
       });
   });
 
+  // delete villager from villagers table associated with users UserId
   app.delete("/api/delete/:id", function (req, res) {
     db.Villager.destroy({
       where: { id: req.params.id },
