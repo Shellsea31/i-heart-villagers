@@ -40,15 +40,11 @@ This application was created for UC Berkeley Bootcamp and solves real-world prob
 
  **Kathy Trujillo** - Front end css development
  * [Github](https://github.com/trukat)
- * LinkedIn:
- * Email:
 
  **Jamily Miller** - Front end css development
  * [Github](https://github.com/Jamly-Miller)
- * LinkedIn:
- * Email:
+ * [LinkedIn](https://www.linkedin.com/in/jamly-miller-125307200/)
+ * Email: jamlymillertheprogrammer@gmail.com
 
  **Faith Elsen** - Front end css development
  * [Github](https://github.com/faitheden1)
- * LinkedIn:
- * Email:
